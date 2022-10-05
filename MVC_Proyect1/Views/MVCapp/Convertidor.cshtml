@@ -1,0 +1,42 @@
+﻿@*Strong Typed*@
+@model Application.ViewModel.ConversionVM
+
+
+<div class="row">
+    <div class="col-md-6 offset-3">
+        <div class="card">
+            <div class="card-header bg-dark text-white">
+                <h1>Conversor de monedas</h1>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-controller="MVCapp" asp-action="Convertidor">
+
+                    <div class="mb-3">
+                        <label asp-for="Entrada" class="form-label">Ingrese el monto que desea convertir</label>
+                        <input asp-for="Entrada" type="number" class="form-control" />
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label asp-for="Tipomoneda" class="form-label">Ingrese a la moneda que desea convertir</label>
+                        <select asp-for="Tipomoneda" class="form-select">
+                            <option>...</option>
+                            <option value="1">Peso a Dolar</option>
+                            <option value="2">Dolar a Peso</option>
+                            <option value="3">Dolar a Euro</option>
+                            <option value="4">Euro a Dolar</option>
+                            <option value="5">Peso a Euro</option>
+                            <option value="6">Euro a Peso</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="reset" class="btn btn-danger">Clear</button>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
